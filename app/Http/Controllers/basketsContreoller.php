@@ -58,8 +58,7 @@ class basketsContreoller extends Controller
         $basket->recipient_id = $recipient->id;
         if($basket->save())
         {
-            Session:: flash('successfulAdd' , 'تمت الاضافة');
-            return redirect()->route('baskets.create');
+            return redirect()->route('barcode' ,$basket->id);
         }
         else{
             Session:: flash('successfulAdd' , 'Somthing bad happin with the baskets');
@@ -81,7 +80,7 @@ class basketsContreoller extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -92,7 +91,8 @@ class basketsContreoller extends Controller
      */
     public function edit($id)
     {
-        return view('basket.view');
+        $basketView = Basket::findOrFail($id);
+        return view('basket.view', compact('basketView'));
     }
 
     /**

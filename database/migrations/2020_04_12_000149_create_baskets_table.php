@@ -19,7 +19,7 @@ class CreateBasketsTable extends Migration
             $table->text('content');
             $table->unsignedBigInteger('recipient_id')->unique();
             $table->foreign('recipient_id')->references('id')->on('recipients')->onDelete('cascade');
-            $table->tinyInteger('status')->default('1');
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });
     }

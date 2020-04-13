@@ -46,7 +46,15 @@
       </li>
 
       <li class="nav-item">
-        <a class="nav-link" href="#"> <span><i class="fas fa-user-friends"></i></span> <span> المستخدين </span></a>
+        <a class="nav-link" href="{{route('delivered')}}"> <span> <i class="fas fa-shipping-fast"></i> </span> <span>  السلات المسلمة </span>  &nbsp;&nbsp; | &nbsp;&nbsp;</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('notDelivered')}}"> <span> <i class="fas fa-ban" ></i> </span> <span>  السلات الغير مسلمة </span>  &nbsp;&nbsp; | &nbsp;&nbsp;</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{{route('notDelivered')}}"> <span><i class="fas fa-user-friends"></i></span> <span> المستخدين </span></a>
       </li>
       </li>
     </ul>

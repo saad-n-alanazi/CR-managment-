@@ -14,6 +14,7 @@
 -->
 @include('errors')
     <div class="card-body">  <!-- start body -->
+    <h4 class="formText">  معلومات السلة :  </h4>
             @csrf
             <div class="row mt-5">  <!-- row start -->
                 <div class="col-md-6">  <!-- col -->
@@ -35,6 +36,7 @@
                 </div>  <!-- end col -->
 
             </div> 
+            <h4 class="formText">  معلومات المستفيد :  </h4>
             <div class="row mt-5">  <!-- row start -->
                 <div class="col-md-6">  <!-- col -->
                     <div class="form-group">

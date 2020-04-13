@@ -1,4 +1,9 @@
 
+@font-face {
+  font-family: Cairo-Regular;
+  src: url('/fonts/Cairo-Regular.ttf/');
+}
+
 body{
   background-color: #f4f6f5 ;
   height: 100%;
@@ -8,7 +13,8 @@ body{
 
 html{
     direction: rtl;
-    font-size: 14px; 
+    font-size: 14px;
+    font-family: Cairo-Regular !important;
 }
 
 
@@ -36,7 +42,14 @@ html{
 
 .bg-cards
 {
-    background-color: #12885b;
+    background-color: white;
+    color: #0d6644 ;
+    font-weight: bold;
+}
+
+.textColor
+{
+  color: rgb(154, 247, 189);
 }
 
 .sidebarToggler
@@ -46,8 +59,45 @@ html{
   width: 50px;
   border: none;
   color: #778246;
-  font-size: large;
+  font-size: large; 
 }
+
+.circle
+{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 1px solid #0d6644;
+  margin: 10% auto;
+  position: relative;
+  background-color: white;
+}
+
+.contentCircle
+{
+  position: absolute;
+  width: inherit;
+  height: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  color: #0d6644;
+}
+
+.cardText
+{
+  margin-top: 35px;
+  margin-right: 35px;
+  color: #0d6644;
+}
+
+.formText
+{
+  margin-top: 35px;
+  color: #0d6644;
+}
+
+
 
 
 

@@ -20,6 +20,9 @@ Route::get('/', function () {
 
 */
 Route::get('/', 'MainPageController@mainPge' );
-
-
 Route::resource('/baskets' , 'basketsContreoller'); 
+Route::get('/delivered' , 'MainPageController@delivered')->name('delivered');
+Route::get('/notDelivered' , 'MainPageController@notDelivered')->name('notDelivered');
+Route::get('/barcode/{id}' , 'BarcodeController@barcode')->name('barcode');
+Route::get('/barcodeResult/{id}' , 'BarcodeController@barcodeResult')->name('barcodeResult');
+Route::get('/resultUpdate/{id}' , 'BarcodeController@resultUpdate')->name('resultUpdate');
