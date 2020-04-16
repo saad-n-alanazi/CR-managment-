@@ -58,6 +58,8 @@ class basketsContreoller extends Controller
         $basket->recipient_id = $recipient->id;
         if($basket->save())
         {
+            \QrCode::size(500)->format('png')
+            ->generate('ItSolutionStuff.com', public_path('images/qrcode.png'));
             return redirect()->route('barcode' ,$basket->id);
         }
         else{

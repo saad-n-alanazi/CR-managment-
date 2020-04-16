@@ -1,3 +1,5 @@
+<!--
+
 <h1> here should be the bar code and the barcode is {{$showBasket->id}}</h1>
 
 
@@ -7,3 +9,6 @@
 <button> See result </button> 
 
 </form>
+
+    -->
+{!! QrCode::size(250)->generate(route('barcodeResult' ,$showBasket->id)); !!}
