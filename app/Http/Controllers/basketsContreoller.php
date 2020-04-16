@@ -61,13 +61,13 @@ class basketsContreoller extends Controller
             return redirect()->route('barcode' ,$basket->id);
         }
         else{
-            Session:: flash('successfulAdd' , 'Somthing bad happin with the baskets');
+            Session:: flash('ErroAddBaskets' , 'خطا في اضافة السلة');
             return redirect()->route('baskets.create');
         }
        
       }
       else{
-        Session:: flash('successfulAdd' , 'Somthing bad happing with person ');
+        Session:: flash('ErrorAddRecipient' , 'خطا في اضافة المستفيد');
         return redirect()->route('baskets.create');
       }
     }
@@ -104,7 +104,22 @@ class basketsContreoller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request , [  
+            'basketName' =>'required',
+            'basketContent' => 'required',
+          ]);
+            $Updatebasket = Basket::findOrFail($id); 
+            $Updatebasket->name = $request->input('basketName');  
+            $Updatebasket->content = $request->input('basketContent');
+            if($Updatebasket->save())
+            {
+                Session:: flash('successfulBasketUpdate' , 'تم تعديل السلة بنجاح');
+                return back();
+            }
+            else{
+                Session:: flash('ErrorBasketUpdate' , 'خطا في تعديل');
+                return back();
+            }
     }
 
     /**

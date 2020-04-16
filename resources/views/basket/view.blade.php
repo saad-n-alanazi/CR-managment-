@@ -2,14 +2,16 @@
 
 @section('content')
 
-
+@include('errors')
 <div class="card mb-5">
     <div class="card-header  bg-cards">
     معلومات السلة :
     </div>
     <div class="card-body">
-    <form method="POST" action="{{route('baskets.store')}}">
+    <form method="POST" action="{{route('baskets.update',$basketView->id)}}">
     @csrf
+    {{method_field('PUT')}}
+  
             <div class="row mt-5">  <!-- row start -->
                 <div class="col-md-6">  <!-- col -->
                     <div class="form-group">
@@ -46,24 +48,25 @@
     معلومات المستفيد :
     </div>
     <div class="card-body">
-    <form method="POST" action="{{route('baskets.store')}}">
+    <form method="POST" action="{{route('recipient.update' , $basketView->recipient->id)}}">
     @csrf
+    {{method_field('PUT')}}
             <div class="row mt-5">  <!-- row start -->
                 <div class="col-md-6">  <!-- col -->
                     <div class="form-group">
                         <label for="name"> <strong> اسم المستفيد :   </strong> </label>
-                        <input type="text" name="basketType" id="basketType" class="form-control" value="{{$basketView->recipient->name}}">
+                        <input type="text" name="recipientName" id="recipientName" class="form-control" value="{{$basketView->recipient->name}}">
                     </div>
                     <div class="form-group">
                         <label for="name"> <strong>   رقم الجوال :  </strong> </label>
-                        <input type="text" name="basketName" id="basketName" class="form-control" value="{{$basketView->recipient->phone}}">
+                        <input type="text" name="recipientPhone" id="recipientPhone" class="form-control" value="{{$basketView->recipient->phone}}">
                     </div>
                 </div>  <!-- end col -->
 
                 <div class="col-md-6">  <!-- col -->
                     <div class="form-group">
                         <label for="name"> <strong>   العنوان :  </strong> </label>
-                        <textarea name="basketContent" id="basketContent" cols="30" rows="5" class="form-control">{{$basketView->recipient->address}}</textarea>
+                        <textarea name="recipientAddress" id="recipientAddress" cols="30" rows="5" class="form-control">{{$basketView->recipient->address}}</textarea>
                     </div>
                 </div> 
             </div> 

@@ -4,6 +4,6 @@
 <form method="GET" action="{{route('barcodeResult',$showBasket->id )}}">
 @csrf
 
-<button> See result </button>
+<button> See result </button> 
 
 </form>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
+use App\Recipient ; 
 class recipientsController extends Controller
 {
     /**
@@ -68,7 +70,27 @@ class recipientsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request , [  
+            'recipientName' =>'required',
+            "recipientPhone"=>'required',
+            "recipientAddress"=>'required',
+          ]);
+    
+          $recipientUpdate = Recipient::findOrFail($id);
+          $recipientUpdate->name = $request->input('recipientName');
+          $recipientUpdate->phone = $request->input('recipientPhone');
+          $recipientUpdate->address = $request->input('recipientAddress');
+          if($recipientUpdate->save())
+          {
+            Session:: flash('successfulRecipientUpdate' , 'تم تعديل المستفيد بنجاح');
+            return back();
+
+           
+          }
+          else{
+            Session:: flash('ErrorRecipientUpdate' , 'خطا في تعديل معلومات المستفيد ');
+            return back();
+          }
     }
 
     /**

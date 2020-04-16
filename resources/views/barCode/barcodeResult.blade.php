@@ -74,7 +74,7 @@
                 <div class="col-md-6">  <!-- col -->
                     <div class="form-group">
                         <label for="name"> <strong>  العنوان :  </strong> </label>
-                        <textarea name="recipientAddress" id="recipientAddress" cols="30" rows="5" class="form-control"> value="{{$showBasketResult->recipient->address}}"</textarea>
+                        <textarea name="recipientAddress" id="recipientAddress" cols="30" rows="5" class="form-control">{{$showBasketResult->recipient->address}}</textarea>
                     </div>
                 </div>  <!-- end col -->
 

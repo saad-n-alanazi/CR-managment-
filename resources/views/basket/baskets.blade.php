@@ -34,7 +34,8 @@
                         @endif
                         <td>
                             <a href="{{route('baskets.edit' , $basket->id)}}" class="btn btn-icon btn-pill btn-primary" data-toggle="tooltip" title="view"><i class="fas fa-eye"></i></a>
-                        </td>
+                        </td> 
+                       
                     </tr>
                     @endforeach
                 </tbody>
